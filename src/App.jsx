@@ -50,6 +50,7 @@ import {
   SiGithub as SiGithubLogo,
 } from "react-icons/si";
 import Galaxy from "./Galaxy";
+import Dock from "./components/Dock";
 import myLogo from "./assets/logo.png";
 import cert1 from "./assets/CCNAv7.jpg";
 import cert2 from "./assets/Cybersecurity.jpg";
@@ -57,7 +58,7 @@ import cert3 from "./assets/EnglishIT.jpg";
 import cert4 from "./assets/Cyberthreat.jpg";
 import cert5 from "./assets/Dataanalytics.jpg";
 import resumepdf from "./assets/Sigua_Resume.pdf";
-import myPhoto from "./assets/1X1.jpg";
+import myPhoto from "./assets/1X1_Updated.jpg";
 
 const SKILLS = [
   { name: "JavaScript / TypeScript", level: 80 },
@@ -114,6 +115,30 @@ const CERTIFICATES = [
   },
 ];
 
+const PROJECTS = [
+  {
+    title: "FreedFromWalls",
+    description:
+      "A personal journal app where you can freely log your goals, track what you want to do, and express how you feel — all in one place. Built to give you a space to reflect, plan, and stay in tune with yourself.",
+    tags: ["React", "JavaScript", "CSS"],
+    repo: "https://github.com/ptrcksg/freedfromwalls.git",
+  },
+  {
+    title: "ArniScore",
+    description:
+      "Detects valid strikes for Arnis using a Hybrid CNN-LSTM and YOLO model — a computer vision system for sports officiating.",
+    tags: ["Python", "YOLO", "CNN", "LSTM", "Computer Vision"],
+    repo: "https://github.com/ptrcksg/ArniScore.git",
+  },
+  {
+    title: "BenIbeFlowers System",
+    description:
+      "A flower shop management system for BenIbe Flowers handling inventory and orders.",
+    tags: ["JavaScript", "MySQL", "Node.js"],
+    repo: "https://github.com/ptrcksg/BenIbeFlowers.git",
+  },
+];
+
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
@@ -159,7 +184,7 @@ export default function Portfolio() {
     }
 
     try {
-      const res = await fetch("https://formspree.io/f/xldoajpe", {
+      const res = await fetch("https://formspree.io/f/xreobore", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
@@ -338,7 +363,7 @@ export default function Portfolio() {
         }
 
         .unreal-title{
-          font-size: var(--fs-title);
+          font-size: 32px;
           line-height:1.08; letter-spacing:.01em; color: var(--ink); font-weight: 800;
         }
         .unreal-title::after, .sparkle::after{ content:none; }
@@ -455,7 +480,7 @@ export default function Portfolio() {
         }
 
         .avatar{
-          width:64px; height:64px; border-radius:9999px; object-fit:cover; display:block;
+          width:120px; height:120px; border-radius:9999px; object-fit:cover; display:block;
           border:1px solid var(--border);
           background:#0b0b0b22;
         }
@@ -474,6 +499,7 @@ export default function Portfolio() {
               <Navbar.Collapse>
                 <Nav className="ms-auto align-items-center gap-2">
                   <Nav.Link href="#about">About</Nav.Link>
+                  <Nav.Link href="#projects">Projects</Nav.Link>
                   <Nav.Link href="#resume">Resume</Nav.Link>
                   <Nav.Link href="#contact">Contact</Nav.Link>
                 </Nav>
@@ -507,9 +533,9 @@ export default function Portfolio() {
               <Row className="g-4 align-items-center">
                 <Col lg={7}>
                   <div className="chip mb-3" style={{ borderColor: "transparent" }}>
-                    <span>🚀 OJT-Ready</span> <span className="muted">Computer Science · React</span>
+                    <span>OJT-Ready</span> <span className="muted">Computer Science · React</span>
                   </div>
-                  <h1 className="unreal-title">Hi! I am <span className="ink-underline">Patrick Sigua</span></h1>
+                  <h1 className="unreal-title">Hi! I am <span className="ink-underline">Patrick Gabriel Sigua</span></h1>
                   <p className="lead mt-3 muted">
                     A 4th-year CS student who turns ideas into clean, usable interfaces.
                     Open to internship / On-the-Job-Training roles.
@@ -521,8 +547,8 @@ export default function Portfolio() {
                   </Stack>
 
                   <div className="d-flex gap-2 mt-4 flex-wrap">
-                    <span className="chip">⚡ React / Node focus</span>
-                    <span className="chip">🧭 Loves UX details</span>
+                    <span className="chip">React / Node focus</span>
+                    <span className="chip">Loves UX details</span>
                   </div>
                 </Col>
 
@@ -585,6 +611,45 @@ export default function Portfolio() {
               ))}
             </Carousel>
           </div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="section layer-1">
+        <div className="container-narrow">
+          <h2 className="unreal-title mb-4" style={{ fontSize: "var(--fs-h2)" }}>
+            Projects
+          </h2>
+          <Row className="g-4">
+            {PROJECTS.map((p) => (
+              <Col md={4} key={p.title}>
+                <Card className="glass-card h-100">
+                  <Card.Body className="p-4 d-flex flex-column gap-3">
+                    <div>
+                      <h5 className="fw-semibold mb-1">{p.title}</h5>
+                      <p className="muted small mb-0">{p.description}</p>
+                    </div>
+                    <div className="d-flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span key={t} className="chip">{t}</span>
+                      ))}
+                    </div>
+                    <div className="mt-auto">
+                      
+                      <a  href={p.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="u-outline d-inline-flex align-items-center gap-2"
+                        style={{ fontSize: ".875rem" }}
+                      >
+                        <FiGithub /> View Repo
+                      </a>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </div>
       </section>
 
@@ -714,7 +779,7 @@ export default function Portfolio() {
                     </span>
 
                     <span className="d-flex align-items-center gap-2">
-                      <FiCalendar /> Availability: <strong>Open for OJT / Internship</strong>
+                      <FiCalendar /> Availability: <strong>Available Starting June 2026</strong>
                     </span>
                     <span className="d-flex align-items-center gap-2">
                       <FiClock /> Timezone: <strong>Asia/Manila (UTC+8)</strong>
@@ -730,14 +795,14 @@ export default function Portfolio() {
                     </span>
                     <span className="d-flex align-items-center gap-2">
                       <FiGithub /> GitHub:{" "}
-                      <a className="ink-link break" href="https://github.com/cspatrick-hau" target="_blank" rel="noreferrer">
-                        cspatrick-hau <FiExternalLink />
+                      <a className="ink-link break" href="https://github.com/ptrcksg" target="_blank" rel="noreferrer">
+                        ptrcksg <FiExternalLink />
                       </a>
                     </span>
                     <span className="d-flex align-items-center gap-2">
                       <FiLinkedin /> LinkedIn:{" "}
-                      <a className="ink-link break" href="https://www.linkedin.com/in/patrick-sigua-8a4b15349/" target="_blank" rel="noreferrer">
-                        patrick-sigua-8a4b15349 <FiExternalLink />
+                      <a className="ink-link break" href="https://www.linkedin.com/in/patrick-gabriel-sigua-8a4b15349/" target="_blank" rel="noreferrer">
+                        patrick-gabriel-sigua-8a4b15349 <FiExternalLink />
                       </a>
                     </span>
                   </div>
