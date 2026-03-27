@@ -791,7 +791,7 @@ export default function Portfolio() {
 
                     <span className="d-flex align-items-center gap-2">
                       <FiGlobe /> Website:{" "}
-                      <a className="ink-link break" href="#top">https://sigua-portfolio.vercel.app/</a>
+                      <a className="ink-link break" href="#top">https://sigua-patrick-portfolio.vercel.app/</a>
                     </span>
                     <span className="d-flex align-items-center gap-2">
                       <FiGithub /> GitHub:{" "}
