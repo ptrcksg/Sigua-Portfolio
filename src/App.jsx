@@ -159,7 +159,7 @@ const PROJECTS = [
     repo: "https://github.com/ptrcksg/ArniScore.git",
   },
   {
-    title: "BenIbeFlowers System",
+    title: "BenIbeFl123owers System",
     description:
       "A flower shop management system for BenIbe Flowers handling inventory and orders.",
     tags: ["JavaScript", "MySQL", "Node.js"],
