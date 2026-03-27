@@ -57,6 +57,10 @@ import cert2 from "./assets/Cybersecurity.jpg";
 import cert3 from "./assets/EnglishIT.jpg";
 import cert4 from "./assets/Cyberthreat.jpg";
 import cert5 from "./assets/Dataanalytics.jpg";
+import cert6 from "./assets/ConflictResolution.png";
+import cert7 from "./assets/ExcelInAnHour.png";
+import cert8 from "./assets/PythonForDataScience.png";
+import cert9 from "./assets/PythonForDataAnalysis.png";
 import resumepdf from "./assets/Sigua_Resume.pdf";
 import myPhoto from "./assets/1X1_Updated.jpg";
 
@@ -112,6 +116,30 @@ const CERTIFICATES = [
     issuer: "Cisco Networking Academy Program",
     year: `October 25, 2024`,
     image: cert5,
+  },
+  {
+    title: "Conflict Resolution for Professionals",
+    issuer: "Goskills",
+    year: `February 12, 2026`,
+    image: cert6,
+  },
+  {
+    title: "Excel in an Hour",
+    issuer: "Goskills",
+    year: `February 12, 2026`,
+    image: cert7,
+  },
+  {
+    title: "Python 101 For Data Science",
+    issuer: "Cognitive Class",
+    year: `February 14, 2026`,
+    image: cert8,
+  },
+  {
+    title: "Python 101 For Data Analysis",
+    issuer: "Cognitive Class",
+    year: `February 14, 2026`,
+    image: cert9,
   },
 ];
 
