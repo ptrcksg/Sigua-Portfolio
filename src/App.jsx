@@ -57,7 +57,7 @@ import cert2 from "./assets/Cybersecurity.jpg";
 import cert3 from "./assets/EnglishIT.jpg";
 import cert4 from "./assets/Cyberthreat.jpg";
 import cert5 from "./assets/Dataanalytics.jpg";
-import resumepdf from "./assets/Sigua_Resume.pdf";
+import resumepdf from "./assets/Sigua_Resume_Updated.pdf";
 import myPhoto from "./assets/1X1_Updated.jpg";
 
 const SKILLS = [
